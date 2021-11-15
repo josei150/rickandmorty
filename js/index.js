@@ -1,7 +1,7 @@
 //Definición de variables globales
 
 const API = 'https://rickandmortyapi.com/api/character/';
-
+const characters = [];
 
 async function fetchData(url_api)
 {
@@ -23,7 +23,8 @@ try{
         for(let i = 0; i < datos.results.length; i++)
         {
             const personaje = await fetchData(url+datos.results[i].id)
-            const renderTarjeta = render(personaje);
+            render(personaje);
+            characters.push(personaje);
             
         }
 
@@ -32,18 +33,17 @@ try{
         {
 
             const pages = await fetchData(`${url}?page=${i}`);
-            const personajes = pages.results.map((result) => 
+            const personajes = pages.results.map((personaje) => 
             {
-                //console.log(result.name);
-                const renderTarjeta = render(result);
                 
+                render(personaje);
+                characters.push(personaje);
            
-            
             });
             
         }
          
-        
+        console.log(characters);
     
     }
     
