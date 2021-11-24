@@ -1,5 +1,6 @@
 //Definición de variables globales
 
+
 const API = 'https://rickandmortyapi.com/api/character/';
 const characters = [];
 
@@ -43,7 +44,7 @@ try{
             
         }
          
-        console.log(characters);
+        
     
     }
     
@@ -53,6 +54,12 @@ catch(error)
 {
     console.error(`Hubo un error: ${error}`);
 }
+
+
+const searching = document.getElementById("search-character");
+
+console.log(characters);
+searching.addEventListener("input", () => searchCharater(characters,searching.value));
 
 
 

@@ -2,7 +2,7 @@ const render = (personaje) => {
 
     const contenedor = document.getElementById("container");
 
-    contenedor.insertAdjacentHTML("beforeend", `<div class="card__container"> 
+    contenedor.insertAdjacentHTML("beforeend", `<div class="card__container" id="${personaje.id}"> 
         <figure class="image__container">
             <img class="image__character" src="${personaje.image}"> 
             <figcaption class="info__container">
