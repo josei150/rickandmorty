@@ -1,4 +1,5 @@
 let containerSearch = document.getElementById("container-find-character");
+let cards = [];
 
 function searchCharater(allCharacters, wordKey)
 {
@@ -12,18 +13,33 @@ function searchCharater(allCharacters, wordKey)
 
     console.log(characterFind);
     
-    // containerSearch = document.getElementById("container-search");
+    
+    if(wordKey === "")
+    {
+        return containerSearch.innerHTML = "";
+    }
+
 
     characterFind.forEach(element => {
-        containerSearch.insertAdjacentHTML("beforeend", `<div class="card__container"> 
-            <a href="#${element.id}"> ${element.id} - ${element.name}</a> 
-        </div>`);
-        
-        console.log("Se hizo la escucha de " + wordKey);
+    containerSearch.insertAdjacentHTML("beforeend", `
+        <a href="#${element.id}" id="${element.id}$"> ${element.id} - ${element.name}</a><br> 
+    `);
+    
+    cards.push(document.getElementById(`${element.id}$`));
+
     });
 
-    
+    let cardsListen = cards.map(currentCard => {
+
+        currentCard.addEventListener("click", () => {
+
+            cardSelected = document.getElementById(`${element.id}`);
+            cardSelected.classList.add("select__character");
+        });
+
+    });
 
     return containerSearch;
+    
 }
 
