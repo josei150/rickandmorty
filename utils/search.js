@@ -1,8 +1,11 @@
-let containerSearch = document.getElementById("container-find-character");
-let cards = [];
 
 function searchCharater(allCharacters, wordKey)
 {
+    let containerSearch = document.getElementById("container-find-character");
+    let cards = [];
+    let search = document.getElementById("search");
+    let scrollY = window.scrollY;
+
 
     containerSearch.innerHTML = "";
 
@@ -21,23 +24,51 @@ function searchCharater(allCharacters, wordKey)
 
 
     characterFind.forEach(element => {
-    containerSearch.insertAdjacentHTML("beforeend", `
-        <a href="#${element.id}" id="${element.id}$"> ${element.id} - ${element.name}</a><br> 
-    `);
+
+        let cardSelected;
+        let card;
+        containerSearch.insertAdjacentHTML("beforeend", `
+        <a href="#${element.id}" id="${element.id}$"> ${element.id} - ${element.name}</a><br>`);
+
+        card = document.getElementById(`${element.id}$`);
     
-    cards.push(document.getElementById(`${element.id}$`));
-
-    });
-
-    let cardsListen = cards.map(currentCard => {
-
-        currentCard.addEventListener("click", () => {
-
-            cardSelected = document.getElementById(`${element.id}`);
-            cardSelected.classList.add("select__character");
+        card.addEventListener("click", () => {
+            
+            search.classList.remove("mostrar");
+            search.classList.add("ocultar");
         });
 
+
+ 
+
     });
+
+
+    window.addEventListener("scroll", (event) => {
+
+
+
+        if(scrollY < window.scrollY)
+        {
+            search.classList.remove("mostrar");
+            search.classList.add("ocultar");
+            document.getElementById("search-character").focus();
+        }
+        else
+        {
+
+
+            search.classList.remove("ocultar");
+            search.classList.add("mostrar");
+            document.getElementById("search-character").focus();
+
+        }
+    
+    
+        scrollY = window.scrollY;
+    
+    });
+    
 
     return containerSearch;
     
