@@ -3,6 +3,7 @@
 
 const API = 'https://rickandmortyapi.com/api/character/';
 const characters = [];
+// let observer = new IntersectionObserver(callback, options);
 
 async function fetchData(url_api)
 {
@@ -62,4 +63,4 @@ console.log(characters);
 searching.addEventListener("input", () => searchCharater(characters,searching.value));
 
 
-
+//Recuerda utilizar el Intersection Observer

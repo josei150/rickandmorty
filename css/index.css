@@ -15,11 +15,30 @@ html{
 
 .header{
     width: 100%;
-    height: 150px;
-    position: fixed;
     
     
 }
+
+.imagen__main{
+
+    height: 50%;
+    width: 100%;
+
+}
+
+.search{
+
+    height: 150px;
+    position: fixed;
+    top: 0;
+
+}
+
+.inicial{
+    top: 180px;
+
+}
+
 
 .container__main{
     display: grid;

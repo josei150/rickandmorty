@@ -52,6 +52,7 @@ function searchCharater(allCharacters, wordKey)
         {
             search.classList.remove("mostrar");
             search.classList.add("ocultar");
+            search.classList.remove("inicial");
             document.getElementById("search-character").focus();
         }
         else
@@ -60,10 +61,18 @@ function searchCharater(allCharacters, wordKey)
 
             search.classList.remove("ocultar");
             search.classList.add("mostrar");
+            search.classList.remove("inicial");
             document.getElementById("search-character").focus();
 
         }
     
+        if(window.scrollY < 30)
+        {
+            search.classList.remove("mostrar");
+            search.classList.remove("ocultar");
+            search.classList.add("inicial");
+
+        }
     
         scrollY = window.scrollY;
     
