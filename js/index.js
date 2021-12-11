@@ -1,9 +1,52 @@
 //Definición de variables globales
 
 
+
 const API = 'https://rickandmortyapi.com/api/character/';
 const characters = [];
-// let observer = new IntersectionObserver(callback, options);
+
+//Implementación del intersection observer
+
+const config = {
+    threshold: 0.5
+}
+
+const imagen = document.getElementById("image");
+
+function observar() {
+    const observador = new IntersectionObserver(handler, config);
+    
+
+
+    observador.observe(imagen);
+    
+}
+
+function handler(entries)
+{
+    const entry = entries[0];
+    console.log(entry);
+
+    let search = document.getElementById("search");
+
+    if(entry.isIntersecting)
+    {
+        search.classList.remove("mostrar");
+        search.classList.remove("ocultar");
+        search.style.top = `${imagen.height}px`;
+    }
+    else
+    {
+        
+        search.style.top = `0`;
+        
+    }
+
+}
+
+observar();
+
+//Petición a la API de Rick and Morty
 
 async function fetchData(url_api)
 {
@@ -63,4 +106,4 @@ console.log(characters);
 searching.addEventListener("input", () => searchCharater(characters,searching.value));
 
 
-//Recuerda utilizar el Intersection Observer
+

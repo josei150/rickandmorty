@@ -22,6 +22,7 @@ html{
 .imagen__main{
 
     height: 50%;
+    max-height: 500px;
     width: 100%;
 
 }
@@ -31,14 +32,14 @@ html{
     height: 150px;
     position: fixed;
     top: 0;
+    width: 100%;
+    
 
 }
 
-.inicial{
-    top: 180px;
-
+.container__search{
+    background-color: rgb(181, 238, 170);
 }
-
 
 .container__main{
     display: grid;
@@ -54,6 +55,13 @@ html{
 
 .container__link__character{
 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: auto;
+    row-gap: 10px;
+    align-items: center;
+    justify-items: start;
+    margin-top: 20px;
     max-height: 120px;
     overflow-y: scroll;
     margin-bottom: 100px;
@@ -68,7 +76,7 @@ html{
 .mostrar
 {
     visibility: visible;
-    background-color: chartreuse;
+    background-color: rgb(181, 238, 170);
 }
 
 .card__container{
@@ -99,27 +107,12 @@ html{
     line-height: 2.1rem;
 }
 
-.select__character{
-
-    /* transform: scale(30px);
-    transition-property: opacity;
-    transition-duration: 3s;
-    transition-delay: 1s 1s; */
-    
-    /* color: var(--rojo); */
-
-}
 
 div:target{
     color: var(--rojo);
     
 }
 
-div{
-
-    scroll-snap-align: center;
-    
-}
 
 .footer{
     width: 100%;
