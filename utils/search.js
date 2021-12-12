@@ -28,7 +28,9 @@ function searchCharater(allCharacters, wordKey)
         let cardSelected;
         let card;
         containerSearch.insertAdjacentHTML("beforeend", `
-        <a href="#${element.id}" id="${element.id}$"> ${element.id} - ${element.name}</a><br>`);
+        <a href="#${element.id}" id="${element.id}$"> ${element.id} - ${element.name}</a>`);
+
+        
 
         card = document.getElementById(`${element.id}$`);
     
@@ -52,7 +54,7 @@ function searchCharater(allCharacters, wordKey)
         {
             search.classList.remove("mostrar");
             search.classList.add("ocultar");
-            document.getElementById("search-character").focus();
+            
         }
         else
         {
@@ -60,17 +62,11 @@ function searchCharater(allCharacters, wordKey)
 
             search.classList.remove("ocultar");
             search.classList.add("mostrar");
-            document.getElementById("search-character").focus();
-
-        }
-    
-        if(window.scrollY < 30)
-        {
-            search.classList.remove("mostrar");
-            search.classList.remove("ocultar");
             
 
         }
+    
+
     
         scrollY = window.scrollY;
     

@@ -25,15 +25,15 @@ function observar() {
 function handler(entries)
 {
     const entry = entries[0];
-    console.log(entry);
-
+    
     let search = document.getElementById("search");
+    let tittle = document.querySelector(".tittle");
 
     if(entry.isIntersecting)
     {
         search.classList.remove("mostrar");
         search.classList.remove("ocultar");
-        search.style.top = `${imagen.height}px`;
+        search.style.top = `${imagen.height + tittle.offsetHeight + 30}px`;
     }
     else
     {
