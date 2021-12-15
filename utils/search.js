@@ -19,9 +19,12 @@ function searchCharater(allCharacters, wordKey)
     
     if(wordKey === "")
     {
+        search.style.height = 0;
         return containerSearch.innerHTML = "";
     }
 
+    search.style.height = "100px";
+    
 
     characterFind.forEach(element => {
 
