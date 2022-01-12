@@ -1,5 +1,5 @@
 
-function searchCharater(allCharacters, wordKey)
+export default function searchCharater(allCharacters, wordKey)
 {
     let containerSearch = document.getElementById("container-find-character");
     let cards = [];

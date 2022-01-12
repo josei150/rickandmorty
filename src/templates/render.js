@@ -1,4 +1,5 @@
-const render = (personaje) => {
+export default function render(personaje)
+{
 
     const contenedor = document.getElementById("container");
 
